@@ -1,0 +1,89 @@
+<main class="content">
+  <div class="card">
+    <h2>Novo carro</h2>
+
+    <form [formGroup]="form" (ngSubmit)="handleSubmit()" class="form">
+      <div class="form-group">
+        <label for="model">Modelo:</label>
+        <input
+          id="model"
+          type="text"
+          formControlName="model"
+          name="model"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="brand">Marca:</label>
+        <input
+          id="brand"
+          type="text"
+          formControlName="brand"
+          name="brand"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="price">Preço:</label>
+        <input
+          id="price"
+          type="number"
+          step="0.01"
+          min="0"
+          formControlName="price"
+          name="price"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descrição:</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          name="description"
+        ></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="engineVersion">Versão do motor:</label>
+        <input
+          id="engineVersion"
+          type="text"
+          formControlName="engineVersion"
+          name="engineVersion"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="city">Cidade:</label>
+        <input
+          id="city"
+          type="text"
+          formControlName="city"
+          name="city"
+        >
+      </div>
+
+   <div class="form-group">
+  <label for="ownerId">ID do proprietário:</label>
+  <input
+    id="ownerId"
+    type="number"
+    min="1"
+    step="1"
+    formControlName="ownerId"
+  >
+</div>
+      <div class="form-actions">
+        <button type="submit" class="btn-primary">Salvar</button>
+        <button
+          type="button"
+          class="btn-secondary"
+          (click)="form.reset()"
+        >
+          Cancelar
+        </button>
+      </div>
+    </form>
+  </div>
+</main>

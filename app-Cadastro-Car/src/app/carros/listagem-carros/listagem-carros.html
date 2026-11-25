@@ -1,0 +1,42 @@
+<header class="header">
+  <div class="user-area">
+    <span class="user-name">Olá, usuário</span>
+    <i class="fa-solid fa-circle-user"></i>
+  </div>
+</header>
+
+<main class="content">
+  <div class="card-full">
+    <div class="table-card">
+      @if (listagem$ | async; as listagem) {
+        <table class="datatable">
+          <thead>
+            <tr>
+              <th>Modelo</th>
+              <th>Marca</th>
+              <th>Preço</th>
+              <th>Cidade</th>
+              <th>Proprietário</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            @for (carro of listagem; track carro.id) {
+              <tr>
+                <td>{{ carro.model }}</td>
+                <td>{{ carro.brand }}</td>
+                <td>R$ {{ carro.price }}</td>
+                <td>{{ carro.city }}</td>
+                <td>{{ carro.ownerName }}</td>
+              </tr>
+            } @empty {
+              <tr>
+                <td colspan="5">Nenhum carro encontrado.</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      }
+    </div>
+  </div>
+</main>
